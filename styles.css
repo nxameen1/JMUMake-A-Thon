@@ -730,6 +730,123 @@ signin-shell {
 
 .app-shell button:hover, #complete a:hover { transform: translateY(-2px); }
 
+#profile-page { padding: 24px 20px 40px; }
+
+#profile-page hr {
+  height: 1px;
+  margin: 22px 0;
+  border: 0;
+  background: var(--line);
+}
+
+/* page title */
+#profile-title {
+  margin: 0;
+  color: #806c84;
+  font-family: "Caveat", cursive;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* header block */
+#avatar {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 14px;
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px var(--terracotta), var(--shadow);
+}
+
+#student-name {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+#school {
+  width: fit-content;
+  margin: 8px auto 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--purple);
+  background: var(--purple-soft);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+#joined, #friend-count {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#friend-count { color: var(--purple); font-weight: 900; }
+
+/* section headings */
+#events-heading, #friends-heading {
+  margin: 0 0 12px;
+  color: #806c84;
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* events card (matches the project cards) */
+#events-card {
+  padding: 18px 17px;
+  border: 1px solid rgb(112 79 124 / 6%);
+  border-radius: 21px;
+  background: var(--purple-soft);
+  box-shadow: 0 5px 0 rgb(100 69 108 / 7%);
+}
+
+#events-card p {
+  margin: 0;
+  color: #6f6471;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+/* friends */
+.friend-avatar {
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e5d9e9;
+  vertical-align: middle;
+}
+
+#friend-name {
+  display: inline-block;
+  margin: 0 0 0 10px;
+  font-size: 14px;
+  font-weight: 800;
+  vertical-align: middle;
+}
+.teamMember {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px 17px;
+    border: 1px solid var(--line);
+    border-radius: 21px;
+    background: var(--paper);
+    box-shadow: 0 5px 0 rgb(138 128 76 / 7%);
+}
+
+
 /* done screen */
 #complete { text-align: center; padding-top: 30px; }
 #complete h1 { margin: 0 0 8px; font-size: 28px; font-weight: 900; letter-spacing: -1px; }

@@ -7,24 +7,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="app-shell">
-    <h1>Profile</h1>
+    <main class="app-shell" id="profile-page">
+    <h1 id="profile-title">Profile</h1>
     <hr>
-    <img src="imgs/sam-placeholder.png" alt="pic of a squirrel">
-    <h1>Student Name</h1>
-    <p>James Madison</p>
-    <p>Joined Nov 10 2026</p>
-    <p>10 friends</p>
+    <img id="avatar" src="imgs/sam-cute.png" alt="pic of a squirrel">
+    <h1 id="student-name">Student Name</h1>
+    <p id="school">James Madison</p>
+    <p id="joined">Joined Nov 14 2026</p>
+    <p id="friend-count">0 friends</p>
     <hr>
-    <h1>Events</h1>
+    <h1 id="events-heading">Events</h1>
     <div id="events-card">
         <p>input an events card</p>
     </div>
     <hr>
-    <h1>Friends</h1>
+    <h1 id="friends-heading">Friends</h1>
     <!--profile pictures-->
-    <img src="" alt="">
-    <p>Friend name yap</p>
+    <ul class="teamList">
+        <li class="teamMember">
+            <img class="friend-avatar" src="imgs/sam-cute.png" alt="">
+            <p class="friend-name">Friend name yap</p>
+        </li>
+        <li class="teamMember">
+            <img class="friend-avatar" src="imgs/sam-cute.png" alt="">
+            <p class="friend-name">Friend name yap</p>
+        </li>
+        <li class="teamMember">
+            <img class="friend-avatar" src="imgs/sam-cute.png" alt="">
+            <p class="friend-name">Friend name yap</p>
+        </li>
+    </ul>
     </main>
 </body>
 </html>
