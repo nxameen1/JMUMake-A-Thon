@@ -120,7 +120,7 @@
     </main>
     <script>
         try {
-            const savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrel') || 'null');
+            const savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrelV2') || 'null');
             if (savedSquirrel?.equipped) {
                 const accessory = document.querySelector('#avatar-accessory');
                 accessory.src = `imgs/${savedSquirrel.equipped.image}`;

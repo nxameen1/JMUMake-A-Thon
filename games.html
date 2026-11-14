@@ -19,9 +19,9 @@
 
     <div class="app-shell">
         <header class="topbar">
-            <div class="acorn-count" role="group" aria-label="Your balance: 240 acorns">
+            <div class="acorn-count" id="games-acorn-count" role="group" aria-label="Your balance: 240 acorns">
                 <span class="acorn-icon" aria-hidden="true"></span>
-                <span>240</span>
+                <span id="games-acorn-balance">240</span>
             </div>
 
             <nav class="primary-nav" aria-label="Explore">
@@ -35,7 +35,7 @@
 
         <main id="main-content">
             <section class="welcome" aria-labelledby="welcome-heading">
-                <p class="greeting">hi, Student!</p>
+                <p class="greeting">hi, Ella!</p>
                 <h1 id="welcome-heading">feeling brave today?</h1>
                 <p class="welcome-copy">try something new!</p>
             </section>
@@ -104,6 +104,14 @@
             <span class="leaf-sprig" aria-hidden="true"><span></span><span></span><span class="sparkle">✦</span></span>
         </a>
     </div>
+    <script>
+        try {
+            const savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrelV2') || 'null');
+            const balance = Number.isFinite(savedSquirrel?.balance) ? savedSquirrel.balance : 240;
+            document.querySelector('#games-acorn-balance').textContent = balance;
+            document.querySelector('#games-acorn-count').setAttribute('aria-label', `Your balance: ${balance} acorns`);
+        } catch {}
+    </script>
 </body>
 
 </html>

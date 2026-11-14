@@ -90,7 +90,7 @@
       ]
     };
     let savedSquirrel = null;
-    try { savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrel') || 'null'); } catch {}
+    try { savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrelV2') || 'null'); } catch {}
     let balance = savedSquirrel?.balance ?? 240;
     let equipped = savedSquirrel?.equipped?.name ?? null;
     if (savedSquirrel?.owned) {
@@ -124,7 +124,7 @@
       preview.src = `imgs/${item.image}`;
       preview.className = `equipped-preview show ${item.kind}`;
       const stage = document.querySelector('.stage'); stage.querySelector('.squirrel-wrap').setAttribute('aria-label', `Squirrel wearing ${name}`);
-      localStorage.setItem('customizedSquirrel', JSON.stringify({
+      localStorage.setItem('customizedSquirrelV2', JSON.stringify({
         balance,
         equipped: { name: item.name, image: item.image, kind: item.kind },
         owned: catalog.hats.filter(entry => entry.owned).map(entry => entry.name)

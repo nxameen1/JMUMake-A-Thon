@@ -20,9 +20,9 @@
 
     <div class="app-shell">
         <header class="topbar">
-            <div class="acorn-count" role="group" aria-label="Your balance: 240 acorns">
+            <div class="acorn-count" id="home-acorn-count" role="group" aria-label="Your balance: 240 acorns">
                 <span class="acorn-icon" aria-hidden="true"></span>
-                <span>240</span>
+                <span id="home-acorn-balance">240</span>
             </div>
 
             <nav class="primary-nav" aria-label="Explore">
@@ -102,6 +102,14 @@
             <span class="leaf-sprig" aria-hidden="true"><span></span><span></span><span class="sparkle">✦</span></span>
         </a>
     </div>
+    <script>
+        try {
+            const savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrelV2') || 'null');
+            const balance = Number.isFinite(savedSquirrel?.balance) ? savedSquirrel.balance : 240;
+            document.querySelector('#home-acorn-balance').textContent = balance;
+            document.querySelector('#home-acorn-count').setAttribute('aria-label', `Your balance: ${balance} acorns`);
+        } catch {}
+    </script>
 </body>
 
 </html>
