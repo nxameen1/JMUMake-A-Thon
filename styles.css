@@ -613,6 +613,7 @@ signin-shell {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+
 }
 
 #interests hr, #major hr, #pref hr {
@@ -883,6 +884,13 @@ signin-shell {
 
 /* room so the last options aren't hidden behind the button */
 .app-shell > div { padding-bottom: 120px; }
+
+#interests p, #major p, #pref p {
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--purple);
+}
 
 .back { width:48px;height:48px;display:grid;place-items:center;border-radius:17px;background:var(--purple-soft);color:var(--purple);font-size:25px;font-weight:900;text-decoration:none; }
 /* done screen */
