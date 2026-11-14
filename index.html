@@ -1,95 +1,107 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f3ed">
-  <title>Acorn — JMU student community</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f3ed">
+    <link rel="manifest" href="/manifest.json" />
+    <title>Acorn — JMU student community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="home-page">
-  <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <div class="app-shell">
-    <header class="topbar">
-      <div class="acorn-count" role="group" aria-label="Your balance: 240 acorns">
-        <span class="acorn-icon" aria-hidden="true"></span>
-        <span>240</span>
-      </div>
-
-      <nav class="primary-nav" aria-label="Explore">
-        <a href="index.html" aria-current="page">home</a>
-        <a href="games.html">games</a>
-        <a href="projects.html">projects</a>
-      </nav>
-
-      <span class="profile-link" role="img" aria-label="Student’s profile">S</span>
-    </header>
-
-    <main id="main-content">
-      <section class="welcome" aria-labelledby="welcome-heading">
-        <p class="greeting">hi, Student!</p>
-        <h1 id="welcome-heading">feeling brave today?</h1>
-        <p class="welcome-copy">try something new!</p>
-      </section>
-
-      <article class="featured-game" aria-labelledby="game-title">
-        <div class="game-topline">
-          <p class="hand-label">a quick game</p>
-          <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +15</span>
-        </div>
-        <p class="event-time"><time datetime="16:30">TODAY · 4:30 PM</time> · ROSE LIBRARY</p>
-        <h2 id="game-title">Help clean up outside Rose</h2>
-        <p class="game-description">Grab a bag and join a small group cleaning up the lawn.</p>
-        <div class="game-footer">
-          <span class="going">
-            <span class="people-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span>4 going</span>
-          </span>
-          <a class="game-link" href="game-detail.html">take a look</a>
-        </div>
-      </article>
-
-      <section class="projects-section" aria-labelledby="projects-heading">
-        <h2 class="section-divider" id="projects-heading">projects looking for people</h2>
-        <div class="project-list">
-          <article class="project-card" aria-labelledby="coin-project-title">
-            <div class="project-topline">
-              <p class="project-type">LONG-TERM PROJECT</p>
-              <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +120</span>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="acorn-count" role="group" aria-label="Your balance: 240 acorns">
+                <span class="acorn-icon" aria-hidden="true"></span>
+                <span>240</span>
             </div>
-            <h3 id="coin-project-title">Historical coin identifier</h3>
-            <p class="project-description">A CS student looking for history majors and designers to help train a coin-recognition tool.</p>
-            <div class="project-footer">
-              <span class="majors">CS&nbsp; · &nbsp;History&nbsp; · &nbsp;Design&nbsp; · &nbsp;6 going</span>
-              <a class="project-link" href="project-detail.html">view project <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
 
-          <article class="project-card" aria-labelledby="story-project-title">
-            <div class="project-topline">
-              <p class="project-type">LONG-TERM PROJECT</p>
-              <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +90</span>
-            </div>
-            <h3 id="story-project-title">Harrisonburg story map</h3>
-            <p class="project-description">Collect neighborhood stories and turn them into a walking map made for curious students.</p>
-            <div class="project-footer">
-              <span class="majors">Media Arts&nbsp; · &nbsp;Geography&nbsp; · &nbsp;History&nbsp; · &nbsp;4 going</span>
-              <a class="project-link" href="project-detail.html">view project <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
+            <nav class="primary-nav" aria-label="Explore">
+                <a href="index.html" aria-current="page">home</a>
+                <a href="games.html">games</a>
+                <a href="projects.html">projects</a>
+            </nav>
 
-    <a class="add-project-bar" href="projects.html" aria-label="Have an idea? Add a project">
-      <span class="add-project-icon" aria-hidden="true">+</span>
-      <span class="add-project-copy"><strong>Have an idea?</strong><span>Add a project</span></span>
-      <span class="leaf-sprig" aria-hidden="true"><span></span><span></span><span class="sparkle">✦</span></span>
-    </a>
-  </div>
+            <span class="profile-link" role="img" aria-label="Student’s profile">S</span>
+        </header>
+
+        <main id="main-content">
+            <section class="welcome" aria-labelledby="welcome-heading">
+                <p class="greeting">hi, Student!</p>
+                <h1 id="welcome-heading">feeling brave today?</h1>
+                <p class="welcome-copy">try something new!</p>
+            </section>
+
+            <article class="featured-game" aria-labelledby="game-title">
+                <div class="game-topline">
+                    <p class="hand-label">a quick game</p>
+                    <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +15</span>
+                </div>
+                <p class="event-time"><time datetime="16:30">TODAY · 4:30 PM</time> · ROSE LIBRARY</p>
+                <h2 id="game-title">Help clean up outside Rose</h2>
+                <p class="game-description">Grab a bag and join a small group cleaning up the lawn.</p>
+                <div class="game-footer">
+                    <span class="going">
+                        <span class="people-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span>4 going</span>
+                    </span>
+                    <a class="game-link" href="game-detail.html">take a look</a>
+                </div>
+            </article>
+
+            <section class="projects-section" aria-labelledby="projects-heading">
+                <h2 class="section-divider" id="projects-heading">projects looking for people</h2>
+                <div class="project-list">
+                    <article class="project-card" aria-labelledby="coin-project-title">
+                        <div class="project-topline">
+                            <p class="project-type">LONG-TERM PROJECT</p>
+                            <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +120</span>
+                        </div>
+                        <h3 id="coin-project-title">Historical coin identifier</h3>
+                        <p class="project-description">A CS student looking for history majors and designers to help
+                            train a coin-recognition tool.</p>
+                        <div class="project-footer">
+                            <span class="majors">CS&nbsp; · &nbsp;History&nbsp; · &nbsp;Design&nbsp; · &nbsp;6
+                                going</span>
+                            <a class="project-link" href="project-detail.html">view project <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" aria-labelledby="story-project-title">
+                        <div class="project-topline">
+                            <p class="project-type">LONG-TERM PROJECT</p>
+                            <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +90</span>
+                        </div>
+                        <h3 id="story-project-title">Harrisonburg story map</h3>
+                        <p class="project-description">Collect neighborhood stories and turn them into a walking map
+                            made for curious students.</p>
+                        <div class="project-footer">
+                            <span class="majors">Media Arts&nbsp; · &nbsp;Geography&nbsp; · &nbsp;History&nbsp; ·
+                                &nbsp;4 going</span>
+                            <a class="project-link" href="project-detail.html">view project <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <a class="add-project-bar" href="projects.html" aria-label="Have an idea? Add a project">
+            <span class="add-project-icon" aria-hidden="true">+</span>
+            <span class="add-project-copy"><strong>Have an idea?</strong><span>Add a project</span></span>
+            <span class="leaf-sprig" aria-hidden="true"><span></span><span></span><span class="sparkle">✦</span></span>
+        </a>
+    </div>
 </body>
+
 </html>
