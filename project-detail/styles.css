@@ -105,6 +105,14 @@
     text-transform: uppercase;
 }
 
+.app-shell>.joinButton {
+    padding: 14px 20px max(16px, env(safe-area-inset-bottom));
+}
+
+.app-shell .joinButton button {
+    margin-top: 0;
+}
+
 .joinButton {
     position: fixed;
     z-index: 10;
