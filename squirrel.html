@@ -4,55 +4,43 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ead8c2">
-  <title>Customize your squirrel · JMU Comfort Zone</title>
+  <title>Acorn — JMU student community</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .customizer { width:min(100%, 540px); min-height:calc(100vh - 56px); padding:20px 20px 28px; }
+    .customizer { width:min(100%, 430px); min-height:calc(100vh - 56px); padding:20px 20px 28px; }
     .customizer .topbar { grid-template-columns:48px 1fr auto; padding:0 0 18px; gap:12px; }
     .back { width:48px;height:48px;display:grid;place-items:center;border-radius:17px;background:var(--purple-soft);color:var(--purple);font-size:25px;font-weight:900;text-decoration:none; }
     .page-title { margin:0;text-align:center;font-size:19px;font-weight:900;letter-spacing:-.4px; }
     .customizer .acorn-count { min-height:46px; }
-    .stage { position:relative;min-height:350px;overflow:hidden;padding:20px;border:1.5px solid #d09b64;border-radius:28px;background:#ead4bf;box-shadow:0 6px 0 #dfc2a3; }
-    .stage::before { position:absolute;top:0;left:50%;width:60px;height:14px;content:"";background:#f4cd78;transform:translateX(-50%) rotate(-2deg); }
+    .stage { position:relative;min-height:378px;overflow:hidden;padding:20px;border:1.5px solid #d09b64;border-radius:23px;background:#ead4bf;box-shadow:0 5px 0 #dfc2a3; }
+    .stage::before { position:absolute;top:0;left:50%;width:56px;height:13px;content:"";background:#f4cd78;transform:translateX(-50%) rotate(-2deg); }
     .stage-heading { position:relative;display:flex;justify-content:space-between;align-items:center;gap:10px; }
     .hand-name { margin:0;color:#795b50;font:600 22px Caveat,cursive; }
     .equipped-label { color:#754a34;font-size:12px;font-weight:900;text-align:right; }
-    .squirrel-wrap { position:relative;display:grid;place-items:center;height:275px; }
-    .ground { position:absolute;bottom:4px;width:64%;height:36px;border-radius:50%;background:#dfc09f; }
-    .squirrel { position:relative;width:210px;height:240px;filter:drop-shadow(0 5px 0 rgb(117 74 52 / 9%)); }
-    .tail { position:absolute;right:7px;top:38px;width:100px;height:134px;border:5px solid #754a34;border-radius:70% 50% 65% 42%;background:#c97839;transform:rotate(23deg); }
-    .tail::after { position:absolute;inset:14px;border:3px solid #e5a05e;border-radius:70% 50% 65% 42%;content:""; }
-    .body { position:absolute;left:55px;top:90px;width:100px;height:128px;border:4px solid #754a34;border-radius:48% 48% 40% 40%;background:#d58a4b; }
-    .belly { position:absolute;left:17px;bottom:9px;width:60px;height:78px;border-radius:50%;background:#f5d9b1; }
-    .head { position:absolute;z-index:2;left:50px;top:38px;width:110px;height:94px;border:4px solid #754a34;border-radius:48% 48% 45% 45%;background:#d58a4b; }
-    .ear { position:absolute;top:-17px;width:34px;height:43px;border:4px solid #754a34;border-radius:70% 70% 30% 30%;background:#d58a4b; }
-    .ear.left {left:6px;transform:rotate(-15deg)} .ear.right {right:6px;transform:rotate(15deg)}
-    .ear::after {position:absolute;inset:8px 7px 5px;border-radius:inherit;background:#efb18b;content:""}
-    .eye {position:absolute;top:42px;left:26px;width:7px;height:9px;border-radius:50%;background:#332f2e;box-shadow:39px 0 #332f2e}
-    .muzzle {position:absolute;left:38px;top:56px;width:28px;height:18px;border-radius:50%;background:#f6dfc4}
-    .nose {position:absolute;left:49px;top:58px;width:8px;height:6px;border-radius:50%;background:#754a34}
-    .acorn {position:absolute;z-index:3;top:7px;left:89px;width:31px;height:29px;border-radius:45% 45% 50% 50%;background:#c96828}
-    .acorn::before {position:absolute;left:-3px;top:-4px;width:37px;height:12px;border-radius:50% 50% 25% 25%;background:#754a34;content:""}
-    .acorn::after {position:absolute;left:13px;top:-12px;width:3px;height:10px;border-radius:4px;background:#754a34;content:"";transform:rotate(20deg)}
-    .accessory {position:absolute;z-index:4;display:none;left:50%;top:8px;transform:translateX(-50%);font-size:36px;line-height:1}
-    .accessory.show {display:block}
-    .tabs {display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;border-bottom:1px solid var(--line);}
-    .tab {padding:13px 8px 11px;border:0;border-bottom:3px solid transparent;color:#927f87;background:transparent;font-size:15px;font-weight:900;text-transform:lowercase;cursor:pointer;}
+    .squirrel-wrap { position:relative;display:grid;place-items:center;height:295px; }
+    .ground { position:absolute;bottom:10px;width:60%;height:40px;border-radius:50%;background:#dfc09f; }
+    .squirrel { position:relative;z-index:1;width:178px;height:246px;display:grid;place-items:center;border:2px dashed #a68d93;border-radius:50% 50% 46% 46%;background:#f3e6da;color:#806b70; }
+    .squirrel-placeholder {display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;}
+    .plus {font-size:29px;font-weight:500;line-height:1;color:#a68d93;}
+    .squirrel-placeholder strong,.equipped-art {font-size:9px;font-weight:900;letter-spacing:.7px;line-height:1.6;text-transform:uppercase;}
+    .squirrel-placeholder em {color:#927f87;font:600 16px Caveat,cursive;}
+    .equipped-art {position:absolute;z-index:2;top:56px;left:50%;width:92px;height:58px;display:grid;place-items:center;padding:6px;border:1.5px dashed #a68d93;background:#f8e5b5;color:#806b70;text-align:center;transform:translateX(-50%);}
+    .tabs {display:grid;grid-template-columns:repeat(3,1fr);margin-top:19px;border-bottom:1px solid var(--line);}
+    .tab {padding:10px 8px 8px;border:0;border-bottom:2px solid transparent;color:#927f87;background:transparent;font-size:14px;font-weight:900;text-transform:lowercase;cursor:pointer;}
     .tab[aria-selected="true"] {border-color:var(--terracotta);color:var(--terracotta)}
-    .item-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 12px;padding:18px 0 24px;}
+    .item-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px 12px;padding:16px 0 24px;}
     .item {min-width:0;text-align:center;}
-    .item-card {position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center;border:2px solid rgb(117 74 52 / 10%);border-radius:22px;background:#f5dfb6;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;}
+    .item-card {position:relative;width:100%;aspect-ratio:1.16;display:grid;place-items:center;border:1.5px solid rgb(117 74 52 / 12%);border-radius:18px;background:#f5dfb6;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;}
     .item:nth-child(3n+2) .item-card {background:#ead4bf}.item:nth-child(3n) .item-card {background:#f1d9c1}.item:nth-child(4n) .item-card {background:#e1c6aa}
     .item-card:hover {transform:translateY(-3px)}
-    .item-card.selected {border:3px solid #754a34;box-shadow:0 4px 0 #c79767;}
+    .item-card.selected {border:2px solid #754a34;box-shadow:0 3px 0 #c79767;}
     .item-card:focus-visible,.tab:focus-visible,.back:focus-visible {outline:3px solid #b2382e;outline-offset:3px}
-    .item-art {display:grid;place-items:center;width:72%;height:72%;border:1.5px dashed #a68d93;border-radius:5px;color:#806b70;font-size:10px;font-weight:900;line-height:1.35;text-transform:uppercase;}
-    .item-emoji {font-size:35px}
+    .item-art {display:grid;place-items:center;width:52%;height:62%;border:1.5px dashed #a68d93;border-radius:3px;color:#806b70;font-size:9px;font-weight:900;line-height:1.5;text-transform:uppercase;}
     .on-badge {position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:99px;color:#fff7ea;background:#754a34;font-size:9px;font-weight:900;text-transform:uppercase;}
-    .item-name {margin:8px 0 3px;font-size:12px;font-weight:900;line-height:1.2;}
+    .item-name {margin:7px 0 3px;font-size:11px;font-weight:900;line-height:1.2;}
     .price {display:inline-flex;align-items:center;gap:5px;color:#754a34;font-size:12px;font-weight:900;}
     .price .acorn-icon {transform:scale(.8)}
     .hint {margin:0;padding:17px 0 0;border-top:1px solid var(--line);color:#927487;text-align:center;font:600 18px Caveat,cursive;}
@@ -69,13 +57,10 @@
       <div class="acorn-count" aria-label="240 acorns"><span class="acorn-icon" aria-hidden="true"></span><span id="balance">240</span></div>
     </header>
     <section class="stage" aria-label="Squirrel preview">
-      <div class="stage-heading"><p class="hand-name">Jamie’s squirrel</p><span class="equipped-label" id="equipped-label">leaf crown on</span></div>
+      <div class="stage-heading"><p class="hand-name">Student’s squirrel</p><span class="equipped-label" id="equipped-label">leaf crown on</span></div>
       <div class="squirrel-wrap" role="img" aria-label="A friendly illustrated squirrel wearing a leaf crown">
-        <div class="ground"></div><div class="squirrel">
-          <div class="tail"></div><div class="body"><div class="belly"></div></div>
-          <div class="head"><div class="ear left"></div><div class="ear right"></div><div class="eye"></div><div class="muzzle"></div><div class="nose"></div></div>
-          <div class="acorn" aria-hidden="true"></div><span class="accessory show" id="preview-accessory" aria-hidden="true">🍃</span>
-        </div>
+        <div class="ground"></div><div class="squirrel"><div class="squirrel-placeholder"><span class="plus" aria-hidden="true">+</span><strong>squirrel art</strong><em>Placeholder</em></div></div>
+        <div class="equipped-art">equipped item<br>art</div>
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Accessory categories">
@@ -90,16 +75,16 @@
   <script>
     const catalog = {
       hats: [
-        {name:'leaf crown',cost:40,emoji:'🍃',owned:true}, {name:'campus cap',cost:45,emoji:'🧢'}, {name:'tiny beanie',cost:50,emoji:'🧶'},
-        {name:'flower hat',cost:60,emoji:'🌼'}, {name:'game-day bow',cost:35,emoji:'🎀'}, {name:'rainy-day hood',cost:65,emoji:'☔'}
+        {name:'leaf crown',cost:40,owned:true}, {name:'campus cap',cost:45}, {name:'tiny beanie',cost:50},
+        {name:'flower hat',cost:60}, {name:'game-day bow',cost:35}, {name:'rainy-day hood',cost:65}
       ],
       outfits: [
-        {name:'cozy cardigan',cost:55,emoji:'🧥'}, {name:'hiking vest',cost:70,emoji:'🥾'}, {name:'golden hoodie',cost:80,emoji:'🟡'},
-        {name:'campus colors',cost:60,emoji:'💜'}, {name:'picnic apron',cost:45,emoji:'🧺'}, {name:'rain boots',cost:50,emoji:'🌧️'}
+        {name:'cozy cardigan',cost:55}, {name:'hiking vest',cost:70}, {name:'golden hoodie',cost:80},
+        {name:'campus colors',cost:60}, {name:'picnic apron',cost:45}, {name:'rain boots',cost:50}
       ],
       extras: [
-        {name:'acorn satchel',cost:30,emoji:'🎒'}, {name:'tiny telescope',cost:75,emoji:'🔭'}, {name:'little book',cost:25,emoji:'📚'},
-        {name:'sparkle trail',cost:90,emoji:'✨'}, {name:'mushroom pal',cost:65,emoji:'🍄'}, {name:'flower friend',cost:40,emoji:'🌸'}
+        {name:'acorn satchel',cost:30}, {name:'tiny telescope',cost:75}, {name:'little book',cost:25},
+        {name:'sparkle trail',cost:90}, {name:'mushroom pal',cost:65}, {name:'flower friend',cost:40}
       ]
     };
     let balance = 240;
@@ -117,7 +102,7 @@
       grid.innerHTML = catalog[category].map(item => {
         const selected = item.name === equipped;
         const unavailable = !item.owned && balance < item.cost;
-        return `<article class="item"><button class="item-card${selected ? ' selected' : ''}" type="button" data-name="${item.name}" data-cost="${item.cost}" data-owned="${Boolean(item.owned)}" aria-pressed="${selected}" ${unavailable ? 'disabled' : ''} aria-label="${item.name}, ${selected ? 'equipped' : item.owned ? 'owned' : `${item.cost} acorns`}">${selected ? '<span class="on-badge">on</span>' : ''}<span class="item-art"><span class="item-emoji" aria-hidden="true">${item.emoji}</span></span></button><p class="item-name">${item.name}</p><span class="price">${item.owned ? 'owned' : `<span class="acorn-icon" aria-hidden="true"></span>${item.cost}`}</span></article>`;
+        return `<article class="item"><button class="item-card${selected ? ' selected' : ''}" type="button" data-name="${item.name}" data-cost="${item.cost}" data-owned="${Boolean(item.owned)}" aria-pressed="${selected}" ${unavailable ? 'disabled' : ''} aria-label="${item.name}, ${selected ? 'equipped' : item.owned ? 'owned' : `${item.cost} acorns`}">${selected ? '<span class="on-badge">on</span>' : ''}<span class="item-art">accessory<br>art</span></button><p class="item-name">${item.name}</p><span class="price">${item.owned ? 'owned' : `<span class="acorn-icon" aria-hidden="true"></span>${item.cost}`}</span></article>`;
       }).join('');
     }
     document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => render(tab.dataset.category)));
@@ -136,9 +121,7 @@
       const item = Object.values(catalog).flat().find(entry => entry.name === name);
       item.owned = true; equipped = name;
       document.querySelector('#equipped-label').textContent = `${name} on`;
-      document.querySelector('#preview-accessory').textContent = item.emoji;
-      document.querySelector('#preview-accessory').classList.add('show');
-      const stage = document.querySelector('.stage'); stage.querySelector('.squirrel-wrap').setAttribute('aria-label', `A friendly illustrated squirrel wearing ${name}`);
+      const stage = document.querySelector('.stage'); stage.querySelector('.squirrel-wrap').setAttribute('aria-label', `Squirrel placeholder with ${name} equipped`);
       render(document.querySelector('.tab[aria-selected="true"]').dataset.category);
       status.textContent = `${name} equipped${button.dataset.owned === 'true' ? '' : ` for ${cost} acorns`}. ${balance} acorns remaining.`;
     });
