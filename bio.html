@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acorn — Create Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Activity detail and sign-up page placeholder. -->
+   <main class="app-shell">
+    <div>
+        <h1>Tell us about yourself!</h1>
+        <p>Choose at least 4 things to help find events that are interesting to you</p>
+        <hr>
+        <div id="interests">
+            <p>Interests</p>
+            <label>
+                <input type="checkbox">
+                Volunteering
+            </label>
+            <label>
+                <input type="checkbox">
+                Art and design
+            </label>
+            <label>
+                <input type="checkbox">
+                Writing
+            </label>
+            <label>
+                <input type="checkbox">
+                Tech and coding
+            </label>
+            <label>
+                <input type="checkbox">
+                History
+            </label>
+            <label>
+                <input type="checkbox">
+                Nature and outdoors
+            </label>
+            <label>
+                <input type="checkbox">
+                Animals
+            </label>
+            <label>
+                <input type="checkbox">
+                Cooking
+            </label>
+            <label>
+                <input type="checkbox">
+                Sports and fitness
+            </label>
+            <label>
+                <input type="checkbox">
+                Teaching and tutoring
+            </label>
+            <label>
+                <input type="checkbox">
+                Community events
+            </label>
+            <label>
+                <input type="checkbox">
+                Photography and video
+            </label>
+            <button type="button" id="next1">Next</button>
+        </div>
+        <div id="major" hidden>
+            <p>What is your major?</p>
+            <label>
+                <input type="radio">
+                Freshman
+            </label>
+            <label>
+                <input type="radio">
+                Sophomore
+            </label>
+            <label>
+                <input type="radio">
+                Junior
+            </label>
+            <label>
+                <input type="radio">
+                Senior
+            </label>
+            <hr>
+            <p>Comfort level</p>
+            <label>
+                <input type="radio">
+                Ease me in
+            </label>
+            <label>
+                <input type="radio">
+                I am up for most things
+            </label>
+            <label>
+                <input type="radio">
+                Throw me in the deep end
+            </label>
+            <hr>
+            <p>Availability</p>
+            <label>
+                <input type="radio">
+                One-time events
+            </label>
+            <label>
+                <input type="radio">
+                A few hours a week
+            </label>
+            <label>
+                <input type="radio">
+                Long-term projects
+            </label>
+            <button type="submit" id="next2">Next</button>
+        </div>
+        <div id="pref" hidden>
+            <p>What is your transportation preference?</p>
+            <label>
+                <input type="checkbox">
+                On campus
+            </label>
+            <label>
+                <input type="checkbox">
+                Off campus
+            </label>
+            <hr>
+            <p>Do you need transportation?</p>
+            <label>
+                <input type="checkbox">
+                I have a car and am willing to provide transportation for others.
+            </label>
+            <label>
+                <input type="checkbox">
+                I have a car and am not willing to provide transportation for others.
+            </label>
+            <label>
+                <input type="checkbox">
+                I do not have a car and need transportation.
+            </label>
+            <label>
+                <input type="checkbox">
+                I do not need transportation
+            </label>
+            <button type="submit" id="next3">Next</button>
+        </div>
+        <div id="complete" hidden>
+            <h1>You're all set!</h1>
+            <p>image of happy squirrel mascot</p>
+            <a href="home.html">Next</a>
+        </div>
+
+    </div>
+   </main>
+   <script>
+    const next1 = document.getElementById("next1");
+    const next2 = document.getElementById("next2");
+    const next3 = document.getElementById("next3");
+    const interests = document.getElementById("interests");
+    const major = document.getElementById("major");
+    const pref = document.getElementById("pref");
+    const complete = document.getElementById("complete");
+
+    next1.addEventListener("click", function(event){
+        event.preventDefault(); // IMPORTANT!
+        interests.hidden = true;
+        major.hidden = false;
+    });
+    next2.addEventListener("click", function(event){
+        event.preventDefault(); // IMPORTANT!
+        major.hidden = true;
+        pref.hidden = false;
+    });
+    next3.addEventListener("click", function(event){
+        event.preventDefault(); // IMPORTANT!
+        pref.hidden = true;
+        complete.hidden = false;
+    });
+
+   </script>
+
+</body>
+</html>
