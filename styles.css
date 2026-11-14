@@ -879,6 +879,7 @@ signin-shell {
 }
 
 .back { flex: 0 0 48px; }
+.welcome .signin-card { margin: 36px 0 0; }
 
 /* room so the last options aren't hidden behind the button */
 .app-shell > div { padding-bottom: 120px; }
