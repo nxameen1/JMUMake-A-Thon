@@ -647,6 +647,41 @@ signin-shell {
   transition: transform 140ms ease, background-color 140ms ease;
 }
 
+/* major text field: undo the chip look */
+#major label:has(input[type="text"]) {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column-reverse; /* puts the "Major" text above the box */
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--purple);
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  cursor: text;
+}
+
+#major input[type="text"] {
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  background: var(--white);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#major input[type="text"]:focus-visible {
+  border-color: var(--white);
+  outline-offset: 2px;
+}
+
 #interests label:hover, #major label:hover, #pref label:hover {
   transform: translateY(-1px);
 }
@@ -669,7 +704,7 @@ signin-shell {
 #interests label:has(input:focus-visible),
 #major label:has(input:focus-visible),
 #pref label:has(input:focus-visible) {
-  outline: 3px solid #a98ab8;
+  outline: 3px solid #ffffff;
   outline-offset: 3px;
 }
 
