@@ -510,6 +510,188 @@
       outline: 3px solid #a98ab8;
       outline-offset: 3px;
     }
+    .form-container {
+    display: grid;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+signin-shell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.signin-card {
+  display: grid;
+  gap: 8px;
+  margin: 0 20px;
+  padding: 22px 20px;
+  border: 1px solid rgb(112 79 124 / 6%);
+  border-radius: 21px;
+  background: var(--purple-soft);
+  box-shadow: 0 5px 0 rgb(100 69 108 / 7%);
+}
+
+.signin-card label {
+  margin-top: 6px;
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.signin-card input {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  background: var(--white);
+}
+
+.signin-card input:focus-visible {
+  outline: 3px solid #a98ab8;
+  outline-offset: 2px;
+}
+
+.signin-btn {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--purple);
+  box-shadow: 0 4px 9px rgb(80 53 87 / 18%);
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 140ms ease;
+}
+/* keep [hidden] working with the flex layouts below */
+.app-shell [hidden] { display: none !important; }
+
+.app-shell > div { padding: 28px 20px 40px; }
+
+.app-shell > div > h1 {
+  margin: 0;
+  font-size: clamp(26px, 6vw, 29px);
+  font-weight: 900;
+  letter-spacing: -1.4px;
+  line-height: 1.1;
+}
+
+.app-shell > div > p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.app-shell > div > hr {
+  height: 1px;
+  margin: 20px 0;
+  border: 0;
+  background: var(--line);
+}
+
+/* the step containers */
+#interests, #major, #pref {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#interests hr, #major hr, #pref hr {
+  flex: 0 0 100%;
+  height: 1px;
+  margin: 10px 0 4px;
+  border: 0;
+  background: var(--line);
+}
+
+/* section labels like "Interests", "Comfort level" */
+#interests p, #major p, #pref p {
+  flex: 0 0 100%;
+  margin: 4px 0 2px;
+  color: #806c84;
+  font-family: "Caveat", cursive;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+/* chips */
+#interests label, #major label, #pref label {
+  position: relative;
+  padding: 10px 15px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  color: var(--purple);
+  background: var(--white);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 140ms ease, background-color 140ms ease;
+}
+
+#interests label:hover, #major label:hover, #pref label:hover {
+  transform: translateY(-1px);
+}
+
+#interests input, #major input, #pref input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#interests label:has(input:checked),
+#major label:has(input:checked),
+#pref label:has(input:checked) {
+  border-color: var(--purple);
+  color: var(--white);
+  background: var(--purple);
+  box-shadow: 0 3px 8px rgb(64 43 70 / 17%);
+}
+
+#interests label:has(input:focus-visible),
+#major label:has(input:focus-visible),
+#pref label:has(input:focus-visible) {
+  outline: 3px solid #a98ab8;
+  outline-offset: 3px;
+}
+
+/* buttons */
+.app-shell button,
+#complete a {
+  flex: 0 0 100%;
+  display: block;
+  margin-top: 22px;
+  padding: 15px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--purple);
+  box-shadow: 0 4px 9px rgb(80 53 87 / 18%);
+  font: inherit;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 140ms ease;
+}
+
+.app-shell button:hover, #complete a:hover { transform: translateY(-2px); }
+
+/* done screen */
+#complete { text-align: center; padding-top: 30px; }
+#complete h1 { margin: 0 0 8px; font-size: 28px; font-weight: 900; letter-spacing: -1px; }
+#complete p { color: var(--muted); font-weight: 600; }
+.signin-btn:hover { transform: translateY(-2px); }
 
     @media (max-width: 480px) {
       body { padding: 0; background: var(--paper); }
