@@ -102,7 +102,7 @@
     </div>
     <script>
         try {
-            const savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrelV2') || 'null');
+            const savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrelV3') || 'null');
             const balance = Number.isFinite(savedSquirrel?.balance) ? savedSquirrel.balance : 240;
             document.querySelector('#projects-acorn-balance').textContent = balance;
             document.querySelector('#projects-acorn-count').setAttribute('aria-label', `Your balance: ${balance} acorns`);

@@ -33,9 +33,9 @@
     .tabs {display:flex;justify-content:center;margin-top:19px;border-bottom:1px solid var(--line);}
     .tab {min-width:112px;padding:10px 22px 8px;border:0;border-bottom:2px solid transparent;border-radius:12px 12px 0 0;color:#927f87;background:transparent;font-size:14px;font-weight:900;text-transform:lowercase;cursor:pointer;}
     .app-shell .tab {display:block;flex:none;margin:0;padding:10px 22px 8px;border-radius:12px 12px 0 0;background:transparent;box-shadow:none;color:#927f87;}
-    .tab[aria-selected="true"] {border-bottom-color:#fffdfa;color:#754a34;background:#fffdfa}
-    .app-shell .tab[aria-selected="true"] {background:#fffdfa;color:#754a34;}
-    .item-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px 12px;padding:16px 0 24px;}
+    .tab[aria-selected="true"] {border-bottom-color:#ead4bf;color:#754a34;background:#ead4bf}
+    .app-shell .tab[aria-selected="true"] {background:var(--paper);color:#754a34;}
+    .item-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px 12px;padding:2px 0 24px;}
     .item {min-width:0;text-align:center;}
     .item-card {position:relative;width:100%;aspect-ratio:1.16;display:grid;place-items:center;border:1.5px solid rgb(117 74 52 / 12%);border-radius:18px;background:#f5dfb6;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;}
     .app-shell .item-card {display:grid;flex:none;place-items:center;margin:0;padding:0;color:inherit;background:#f5dfb6;box-shadow:none;}
@@ -46,7 +46,7 @@
     .app-shell .item-card.selected {background:#ead4bf;box-shadow:0 3px 0 #c79767;}
     .item-card:focus-visible,.tab:focus-visible,.back:focus-visible {outline:3px solid #754a34;outline-offset:3px}
     .item-art {display:block;width:67%;height:70%;margin:auto;object-fit:contain;object-position:center;}
-    .on-badge {position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:99px;color:#754a34;background:#fffdfa;font-size:9px;font-weight:900;text-transform:uppercase;}
+    .on-badge {position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:99px;color:#754a34;background:#ead4bf;font-size:9px;font-weight:900;text-transform:uppercase;}
     .item-name {margin:7px 0 3px;font-size:11px;font-weight:900;line-height:1.2;}
     .price {display:inline-flex;align-items:center;gap:5px;color:#754a34;font-size:12px;font-weight:900;}
     .price .acorn-icon {transform:scale(.8)}
@@ -73,7 +73,7 @@
       </div>
     </section>
     <div class="tabs" role="tablist" aria-label="Hat accessories">
-      <button class="tab" role="tab" id="tab-hats" aria-selected="true" aria-controls="item-grid" data-category="hats">hats</button>
+      <button class="tab" role="tab" id="tab-hats" aria-selected="true" aria-controls="item-grid" data-category="hats">outfits</button>
     </div>
     <section class="item-grid" id="item-grid" role="tabpanel" aria-labelledby="tab-hats"></section>
     <p class="hint">more little hats unlock as you branch out</p>
@@ -90,7 +90,7 @@
       ]
     };
     let savedSquirrel = null;
-    try { savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrelV2') || 'null'); } catch {}
+    try { savedSquirrel = JSON.parse(localStorage.getItem('customizedSquirrelV3') || 'null'); } catch {}
     let balance = savedSquirrel?.balance ?? 240;
     let equipped = savedSquirrel?.equipped?.name ?? null;
     if (savedSquirrel?.owned) {
@@ -124,7 +124,7 @@
       preview.src = `imgs/${item.image}`;
       preview.className = `equipped-preview show ${item.kind}`;
       const stage = document.querySelector('.stage'); stage.querySelector('.squirrel-wrap').setAttribute('aria-label', `Squirrel wearing ${name}`);
-      localStorage.setItem('customizedSquirrelV2', JSON.stringify({
+      localStorage.setItem('customizedSquirrelV3', JSON.stringify({
         balance,
         equipped: { name: item.name, image: item.image, kind: item.kind },
         owned: catalog.hats.filter(entry => entry.owned).map(entry => entry.name)

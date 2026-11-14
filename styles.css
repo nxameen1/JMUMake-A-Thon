@@ -883,7 +883,7 @@ signin-shell {
 .welcome .signin-card { margin: 36px 0 0; }
 
 /* room so the last options aren't hidden behind the button */
-.app-shell > div { padding-bottom: 120px; }
+.app-shell > div { padding-bottom: 15px; }
 
 #interests p, #major p, #pref p {
   font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive;
