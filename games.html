@@ -3,9 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JMU Comfort Zone — Games</title>
+  <meta name="theme-color" content="#f8f3ed">
+  <title>Games — Acorn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <!-- Short-term activities browse page placeholder. -->
+<body class="games-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="acorn-count" role="group" aria-label="Your balance: 240 acorns">
+        <span class="acorn-icon" aria-hidden="true"></span>
+        <span>240</span>
+      </div>
+
+      <nav class="primary-nav" aria-label="Explore">
+        <a href="index.html">home</a>
+        <a href="games.html" aria-current="page">games</a>
+        <a href="projects.html">projects</a>
+      </nav>
+
+      <span class="profile-link" role="img" aria-label="Student profile">S</span>
+    </header>
+
+    <main id="main-content">
+      <section class="welcome" aria-labelledby="welcome-heading">
+        <p class="greeting">hi, Student!</p>
+        <h1 id="welcome-heading">feeling brave today?</h1>
+        <p class="welcome-copy">try something new!</p>
+      </section>
+
+      <section class="games-section" aria-labelledby="games-heading">
+        <h2 class="section-divider" id="games-heading">little adventures to join</h2>
+        <div class="game-list">
+          <article class="featured-game" aria-labelledby="game-rose-title">
+            <div class="game-topline">
+              <p class="hand-label">a quick game</p>
+              <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +15</span>
+            </div>
+            <p class="event-time"><time datetime="16:30">TODAY · 4:30 PM</time> · ROSE LIBRARY</p>
+            <h2 id="game-rose-title">Help clean up outside Rose</h2>
+            <p class="game-description">Grab a bag and join a small group cleaning up the lawn.</p>
+            <div class="game-footer">
+              <span class="going">
+                <span class="people-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>4 going</span>
+              </span>
+              <a class="game-link" href="game-detail.html">take a look</a>
+            </div>
+          </article>
+
+          <article class="featured-game" aria-labelledby="game-lunch-title">
+            <div class="game-topline">
+              <p class="hand-label">a quick game</p>
+              <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +15</span>
+            </div>
+            <p class="event-time"><time datetime="12:15">TODAY · 12:15 PM</time> · D-HALL</p>
+            <h2 id="game-lunch-title">Find a new lunch buddy</h2>
+            <p class="game-description">Join a table with students you haven’t met yet.</p>
+            <div class="game-footer">
+              <span class="going">
+                <span class="people-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>3 going</span>
+              </span>
+              <a class="game-link" href="game-detail.html">take a look</a>
+            </div>
+          </article>
+
+          <article class="featured-game" aria-labelledby="game-garden-title">
+            <div class="game-topline">
+              <p class="hand-label">a quick game</p>
+              <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +20</span>
+            </div>
+            <p class="event-time"><time datetime="10:00">SATURDAY · 10:00 AM</time> · HARRISONBURG GARDEN</p>
+            <h2 id="game-garden-title">Spend a morning in the garden</h2>
+            <p class="game-description">Get your hands in the soil and meet neighbors from town.</p>
+            <div class="game-footer">
+              <span class="going">
+                <span class="people-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>5 going</span>
+              </span>
+              <a class="game-link" href="game-detail.html">take a look</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <a class="add-project-bar" href="project-detail.html" aria-label="Have an idea? Add a project">
+      <span class="add-project-icon" aria-hidden="true">+</span>
+      <span class="add-project-copy"><strong>Have an idea?</strong><span>Add a project</span></span>
+      <span class="leaf-sprig" aria-hidden="true"><span></span><span></span><span class="sparkle">✦</span></span>
+    </a>
+  </div>
 </body>
 </html>
