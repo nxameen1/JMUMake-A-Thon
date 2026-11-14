@@ -31,7 +31,7 @@
 
             <p class="greeting">Historial coin identifier</p>
 
-            <a class="icon-button" href="#" aria-label="Save project">
+            <a class="icon-button" id="saveProject" href="#" aria-label="Save project">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
                     <path
                         d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z">
@@ -47,7 +47,8 @@
             </section>
 
             <div class="projectInfo">
-                <img class="projectImage" alt="Project image" src="https://www.recoveringsawhill.com/assets/img/coin-metric-learning/adams-side-by-side-1400.webp" />
+                <img class="projectImage" alt="Project image"
+                    src="https://www.recoveringsawhill.com/assets/img/coin-metric-learning/adams-side-by-side-1400.webp" />
 
                 <p class="projectDescription">
                     A CS student looking for history majors and designers to help train a coin-recognition tool. Do you
@@ -65,27 +66,27 @@
                         </div>
                     </li>
                     <li class="teamMember">
-                        <img class="memberAvatar" src="https://static.coasterfan5.com/makeathon/logan.png"
+                        <img class="memberAvatar" src="https://static.coasterfan5.com/makeathon/5.jpeg"
                             alt="Jordan Ellis profile picture" />
                         <div class="memberInfo">
-                            <p class="memberName">Logan Ellis</p>
-                            <p class="memberMajor">Biology</p>
+                            <p class="memberName">Eli Whitt</p>
+                            <p class="memberMajor">Computer Science</p>
                         </div>
                     </li>
                     <li class="teamMember">
-                        <img class="memberAvatar" src="https://static.coasterfan5.com/makeathon/1.jpeg"
+                        <img class="memberAvatar" src="https://static.coasterfan5.com/makeathon/3.jpeg"
                             alt="Caleb Morgan profile picture" />
                         <div class="memberInfo">
-                            <p class="memberName">Caleb Morgan</p>
-                            <p class="memberMajor">Geography</p>
+                            <p class="memberName">Justin Simpson</p>
+                            <p class="memberMajor">Inteligence Analysis</p>
                         </div>
                     </li>
                     <li class="teamMember">
-                        <img class="memberAvatar" src="https://static.coasterfan5.com/makeathon/2.jpeg"
+                        <img class="memberAvatar" src="https://static.coasterfan5.com/makeathon/4.jpeg"
                             alt="Priya Ramirez profile picture" />
                         <div class="memberInfo">
-                            <p class="memberName">Priya Ramirez</p>
-                            <p class="memberMajor">Dance</p>
+                            <p class="memberName">Austin Fernando</p>
+                            <p class="memberMajor">History</p>
                         </div>
                     </li>
                 </ul>
@@ -96,15 +97,13 @@
             <button class="button-color">Join Project</button>
         </div>
     </div>
-<script>
-        const sourcePage = new URLSearchParams(window.location.search).get('from');
-        const returnPages = {
-            home: '../home.html',
-            projects: '../projects.html',
-            games: '../games.html'
-        };
-        const backLink = document.querySelector('[data-history-back]');
-        backLink.href = returnPages[sourcePage] || '../projects.html';
+    <script>
+        const saveProject = document.getElementById('saveProject');
+        saveProject.addEventListener('click', (event) => {
+            event.preventDefault();
+            saveProject.style.color = '#f5c518';
+            saveProject.querySelector('path').setAttribute('d', 'M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34l13.51-58.6-45.1-39.36a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L152,81.19l59.46,5.15a16,16,0,0,1,9.11,28.06Z');
+        });
     </script>
 </body>
 
