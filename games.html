@@ -17,11 +17,36 @@
 <body class="games-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="app-shell">
-        <header class="topbar">
-            <div class="acorn-count" role="group" aria-label="Your balance: 240 acorns">
-                <span class="acorn-icon" aria-hidden="true"></span>
-                <span>240</span>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="acorn-count" role="group" aria-label="Your balance: 240 acorns">
+        <span class="acorn-icon" aria-hidden="true"></span>
+        <span>240</span>
+      </div>
+
+      <nav class="primary-nav" aria-label="Explore">
+        <a href="home.html">home</a>
+        <a href="games.html" aria-current="page">games</a>
+        <a href="projects.html">projects</a>
+      </nav>
+
+      <span class="profile-link" role="img" aria-label="Student profile">S</span>
+    </header>
+
+    <main id="main-content">
+      <section class="welcome" aria-labelledby="welcome-heading">
+        <p class="greeting">hi, Student!</p>
+        <h1 id="welcome-heading">feeling brave today?</h1>
+        <p class="welcome-copy">try something new!</p>
+      </section>
+
+      <section class="games-section" aria-labelledby="games-heading">
+        <h2 class="section-divider" id="games-heading">little adventures to join</h2>
+        <div class="game-list">
+          <article class="featured-game" aria-labelledby="game-rose-title">
+            <div class="game-topline">
+              <p class="hand-label">a quick game</p>
+              <span class="points"><span class="acorn-icon" aria-hidden="true"></span> +15</span>
             </div>
 
             <nav class="primary-nav" aria-label="Explore">
