@@ -845,8 +845,45 @@ signin-shell {
     background: var(--paper);
     box-shadow: 0 5px 0 rgb(138 128 76 / 7%);
 }
+#complete img {
+  display: block;
+  width: 400px;
+  max-width: 200%;
+  height: auto;
+  margin: 16px auto 0;
+}
 
+#next1, #next2, #next3, #complete a {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  z-index: 10;
+  width: min(calc(100% - 40px), 390px);
+  margin: 0 auto max(20px, env(safe-area-inset-bottom));
+  box-shadow: 0 0 0 12px var(--paper), 0 4px 9px rgb(80 53 87 / 18%);
+}
 
+.app-shell > div > header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.app-shell > div > header h1 {
+  margin: 0;
+  font-size: clamp(22px, 6vw, 29px);
+  font-weight: 900;
+  letter-spacing: -1.4px;
+  line-height: 1.1;
+}
+
+.back { flex: 0 0 48px; }
+
+/* room so the last options aren't hidden behind the button */
+.app-shell > div { padding-bottom: 120px; }
+
+.back { width:48px;height:48px;display:grid;place-items:center;border-radius:17px;background:var(--purple-soft);color:var(--purple);font-size:25px;font-weight:900;text-decoration:none; }
 /* done screen */
 #complete { text-align: center; padding-top: 30px; }
 #complete h1 { margin: 0 0 8px; font-size: 28px; font-weight: 900; letter-spacing: -1px; }

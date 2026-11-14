@@ -10,10 +10,14 @@
   <!-- Activity detail and sign-up page placeholder. -->
    <main class="app-shell">
     <div>
-        <h1>Tell us about yourself!</h1>
-        <p>Choose at least 4 things to help find events that are interesting to you</p>
-        <hr>
+
+        <header>
+            <a class="back" href="home.html" aria-label="Back to home">‹</a>
+            <h1>Tell us about yourself!</h1>
+        </header>
         <div id="interests">
+            <p>Choose at least 3 things to help find events that are interesting to you</p>
+            <hr>
             <p>Interests</p>
             <label>
                 <input type="checkbox">
@@ -63,52 +67,81 @@
                 <input type="checkbox">
                 Photography and video
             </label>
+            <label>
+                <input type="checkbox">
+                Sports
+            </label>
+            <label>
+                <input type="checkbox">
+                DIY tasks
+            </label>
+            <label>
+                <input type="checkbox">
+                Music
+            </label>
+            <label>
+                <input type="checkbox">
+                Movies
+            </label>
+            <label>
+                <input type="checkbox">
+                Baking
+            </label>
+            <label>
+                <input type="checkbox">
+                Cooking
+            </label>
+            <label>
+                <input type="checkbox">
+                Organizing
+            </label>
+
             <button type="button" id="next1">Next</button>
         </div>
         <div id="major" hidden>
             <p>What is your grade level?</p>
             <label>
-                <input type="radio">
+                <input type="radio" name="grade">
                 Freshman
             </label>
             <label>
-                <input type="radio">
+                <input type="radio" name="grade">
                 Sophomore
             </label>
             <label>
-                <input type="radio">
+                <input type="radio" name="grade">
                 Junior
             </label>
             <label>
-                <input type="radio">
+                <input type="radio" name="grade">
                 Senior
             </label>
             <hr>
             <p>Comfort level</p>
             <label>
-                <input type="radio">
+                <input type="radio" name="comfort">
                 Ease me in
             </label>
             <label>
-                <input type="radio">
+                <input type="radio" name="comfort">
                 I am up for most things
             </label>
             <label>
-                <input type="radio">
+                <input type="radio" name="comfort">
                 Throw me in the deep end
             </label>
             <hr>
             <p>Availability</p>
             <label>
-                <input type="radio">
+                <input type="checkbox">
                 One-time events
             </label>
             <label>
-                <input type="radio">
+                <input type="checkbox">
                 A few hours a week
             </label>
             <label>
-                <input type="radio">
+                <input type="checkbox">
                 Long-term projects
             </label>
             <hr>
@@ -150,9 +183,10 @@
             <button type="submit" id="next3">Next</button>
         </div>
         <div id="complete" hidden>
+            <section class="welcome" aria-labelledby="welcome-heading"></section>
             <h1>You're all set!</h1>
-            <p>image of happy squirrel mascot</p>
-            <a href="home.html">Next</a>
+            <img src="imgs/sam-cute.png" alt="sam!">
+            <a href="home.html" id="next4">Next</a>
         </div>
 
     </div>
@@ -180,6 +214,19 @@
         event.preventDefault(); // IMPORTANT!
         pref.hidden = true;
         complete.hidden = false;
+    });
+
+    document.querySelectorAll("input[type=radio]").forEach(radio => {
+        radio.addEventListener("click", () => {
+            if (radio.wasChecked) {
+            radio.checked = false;
+            radio.wasChecked = false;
+            } else {
+            document.querySelectorAll(`input[name="${radio.name}"]`)
+                .forEach(r => r.wasChecked = false);
+            radio.wasChecked = true;
+            }
+        });
     });
 
    </script>

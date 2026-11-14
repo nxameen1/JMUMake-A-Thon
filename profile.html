@@ -8,17 +8,33 @@
 </head>
 <body>
     <main class="app-shell" id="profile-page">
-    <h1 id="profile-title">Profile</h1>
+    <header class="topbar">
+        <a class="back" href="home.html" aria-label="Back to home">‹</a>
+        <h1 id="profile-title">Profile</h1>
+    </header>
     <hr>
-    <img id="avatar" src="imgs/sam-cute.png" alt="pic of a squirrel">
-    <h1 id="student-name">Student Name</h1>
-    <p id="school">James Madison</p>
+    <section class="welcome" aria-labelledby="welcome-heading">
+    <a href="squirrel.html">
+        <img id="avatar" src="imgs/sam-cute.png" alt="pic of a squirrel">
+    </a>
+    <h1 id="student-name">Ella</h1>
+    <p id="school">James Madison University</p>
     <p id="joined">Joined Nov 14 2026</p>
     <p id="friend-count">0 friends</p>
     <hr>
-    <h1 id="events-heading">Events</h1>
+    </section>
+    <h1 id="events-heading">Your Events</h1>
     <div id="events-card">
-        <p>input an events card</p>
+        <p class="event-time"><time datetime="16:30">TODAY · 4:30 PM</time> · ROSE LIBRARY</p>
+        <h2 id="game-title">Help clean up outside Rose</h2>
+        <p class="game-description">Grab a bag and join a small group cleaning up the lawn.</p>
+        <div class="game-footer">
+            <span class="going">
+                <span class="people-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>5 going</span>
+            </span>
+            <a class="game-link" href="./game-detail/index.html">more info</a>
+        </div>
     </div>
     <hr>
     <h1 id="friends-heading">Friends</h1>
@@ -26,15 +42,7 @@
     <ul class="teamList">
         <li class="teamMember">
             <img class="friend-avatar" src="imgs/sam-cute.png" alt="">
-            <p class="friend-name">Friend name yap</p>
-        </li>
-        <li class="teamMember">
-            <img class="friend-avatar" src="imgs/sam-cute.png" alt="">
-            <p class="friend-name">Friend name yap</p>
-        </li>
-        <li class="teamMember">
-            <img class="friend-avatar" src="imgs/sam-cute.png" alt="">
-            <p class="friend-name">Friend name yap</p>
+            <p class="friend-name">Complete a game to branch out and make friends!</p>
         </li>
     </ul>
     </main>
