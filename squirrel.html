@@ -22,24 +22,26 @@
     .equipped-label { color:#754a34;font-size:12px;font-weight:900;text-align:right; }
     .squirrel-wrap { position:relative;display:grid;place-items:center;height:295px; }
     .ground { position:absolute;bottom:10px;width:60%;height:40px;border-radius:50%;background:#dfc09f; }
-    .squirrel { position:relative;z-index:1;width:178px;height:246px;display:grid;place-items:center;border:2px dashed #a68d93;border-radius:50% 50% 46% 46%;background:#f3e6da;color:#806b70; }
-    .squirrel-placeholder {display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;}
-    .plus {font-size:29px;font-weight:500;line-height:1;color:#a68d93;}
-    .squirrel-placeholder strong,.equipped-art {font-size:9px;font-weight:900;letter-spacing:.7px;line-height:1.6;text-transform:uppercase;}
-    .squirrel-placeholder em {color:#927f87;font:600 16px Caveat,cursive;}
-    .equipped-art {position:absolute;z-index:2;top:56px;left:50%;width:92px;height:58px;display:grid;place-items:center;padding:6px;border:1.5px dashed #a68d93;background:#f8e5b5;color:#806b70;text-align:center;transform:translateX(-50%);}
-    .tabs {display:grid;grid-template-columns:repeat(3,1fr);margin-top:19px;border-bottom:1px solid var(--line);}
-    .tab {padding:10px 8px 8px;border:0;border-bottom:2px solid transparent;color:#927f87;background:transparent;font-size:14px;font-weight:900;text-transform:lowercase;cursor:pointer;}
-    .tab[aria-selected="true"] {border-color:var(--terracotta);color:var(--terracotta)}
+    .squirrel { position:relative;z-index:1;width:210px;height:246px;display:grid;place-items:center; }
+    .squirrel-base {width:100%;height:100%;object-fit:contain;}
+    .equipped-preview {position:absolute;display:none;object-fit:contain;filter:drop-shadow(0 2px 1px rgb(51 47 46 / 12%));}
+    .equipped-preview.show {display:block}
+    .equipped-preview.hat {top:5%;left:25%;width:50%;height:27%;}
+    .equipped-preview.ears {top:0;left:25%;width:50%;height:34%;}
+    .equipped-preview.shorts {top:58%;left:28%;width:46%;height:29%;}
+    .tabs {display:flex;justify-content:center;margin-top:19px;border-bottom:1px solid var(--line);}
+    .tab {min-width:112px;padding:10px 22px 8px;border:0;border-bottom:2px solid transparent;border-radius:12px 12px 0 0;color:#927f87;background:transparent;font-size:14px;font-weight:900;text-transform:lowercase;cursor:pointer;}
+    .tab[aria-selected="true"] {border-bottom-color:#fffdfa;color:#754a34;background:#fffdfa}
     .item-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px 12px;padding:16px 0 24px;}
     .item {min-width:0;text-align:center;}
     .item-card {position:relative;width:100%;aspect-ratio:1.16;display:grid;place-items:center;border:1.5px solid rgb(117 74 52 / 12%);border-radius:18px;background:#f5dfb6;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;}
+    .item:first-child .item-card {background:#ead4bf;}
     .item:nth-child(3n+2) .item-card {background:#ead4bf}.item:nth-child(3n) .item-card {background:#f1d9c1}.item:nth-child(4n) .item-card {background:#e1c6aa}
     .item-card:hover {transform:translateY(-3px)}
-    .item-card.selected {border:2px solid #754a34;box-shadow:0 3px 0 #c79767;}
-    .item-card:focus-visible,.tab:focus-visible,.back:focus-visible {outline:3px solid #b2382e;outline-offset:3px}
-    .item-art {display:grid;place-items:center;width:52%;height:62%;border:1.5px dashed #a68d93;border-radius:3px;color:#806b70;font-size:9px;font-weight:900;line-height:1.5;text-transform:uppercase;}
-    .on-badge {position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:99px;color:#fff7ea;background:#754a34;font-size:9px;font-weight:900;text-transform:uppercase;}
+    .item-card.selected {border:2px solid #fffdfa;background:#ead4bf;box-shadow:0 3px 0 #c79767;}
+    .item-card:focus-visible,.tab:focus-visible,.back:focus-visible {outline:3px solid #754a34;outline-offset:3px}
+    .item-art {display:block;width:67%;height:70%;object-fit:contain;}
+    .on-badge {position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:99px;color:#754a34;background:#fffdfa;font-size:9px;font-weight:900;text-transform:uppercase;}
     .item-name {margin:7px 0 3px;font-size:11px;font-weight:900;line-height:1.2;}
     .price {display:inline-flex;align-items:center;gap:5px;color:#754a34;font-size:12px;font-weight:900;}
     .price .acorn-icon {transform:scale(.8)}
@@ -57,38 +59,33 @@
       <div class="acorn-count" aria-label="240 acorns"><span class="acorn-icon" aria-hidden="true"></span><span id="balance">240</span></div>
     </header>
     <section class="stage" aria-label="Squirrel preview">
-      <div class="stage-heading"><p class="hand-name">Student’s squirrel</p><span class="equipped-label" id="equipped-label">leaf crown on</span></div>
-      <div class="squirrel-wrap" role="img" aria-label="A friendly illustrated squirrel wearing a leaf crown">
-        <div class="ground"></div><div class="squirrel"><div class="squirrel-placeholder"><span class="plus" aria-hidden="true">+</span><strong>squirrel art</strong><em>Placeholder</em></div></div>
-        <div class="equipped-art">equipped item<br>art</div>
+      <div class="stage-heading"><p class="hand-name">Student’s squirrel</p><span class="equipped-label" id="equipped-label">choose an item</span></div>
+      <div class="squirrel-wrap" role="img" aria-label="Squirrel customization preview">
+        <div class="ground"></div><div class="squirrel">
+          <img class="squirrel-base" src="imgs/sam-cute.png" alt="">
+          <img class="equipped-preview hat" id="equipped-preview" src="" alt="">
+        </div>
       </div>
     </section>
-    <div class="tabs" role="tablist" aria-label="Accessory categories">
+    <div class="tabs" role="tablist" aria-label="Hat accessories">
       <button class="tab" role="tab" id="tab-hats" aria-selected="true" aria-controls="item-grid" data-category="hats">hats</button>
-      <button class="tab" role="tab" id="tab-outfits" aria-selected="false" aria-controls="item-grid" data-category="outfits">outfits</button>
-      <button class="tab" role="tab" id="tab-extras" aria-selected="false" aria-controls="item-grid" data-category="extras">extras</button>
     </div>
     <section class="item-grid" id="item-grid" role="tabpanel" aria-labelledby="tab-hats"></section>
-    <p class="hint">more little things unlock as you branch out</p>
+    <p class="hint">more little hats unlock as you branch out</p>
     <p class="sr-only" id="status" aria-live="polite"></p>
   </main>
   <script>
     const catalog = {
       hats: [
-        {name:'leaf crown',cost:40,owned:true}, {name:'campus cap',cost:45}, {name:'tiny beanie',cost:50},
-        {name:'flower hat',cost:60}, {name:'game-day bow',cost:35}, {name:'rainy-day hood',cost:65}
-      ],
-      outfits: [
-        {name:'cozy cardigan',cost:55}, {name:'hiking vest',cost:70}, {name:'golden hoodie',cost:80},
-        {name:'campus colors',cost:60}, {name:'picnic apron',cost:45}, {name:'rain boots',cost:50}
-      ],
-      extras: [
-        {name:'acorn satchel',cost:30}, {name:'tiny telescope',cost:75}, {name:'little book',cost:25},
-        {name:'sparkle trail',cost:90}, {name:'mushroom pal',cost:65}, {name:'flower friend',cost:40}
+        {name:'Russian hat',image:'russina-removebg-preview.png',kind:'hat',cost:40},
+        {name:'blue cap',image:'blue_cap-removebg-preview.png',kind:'hat',cost:45},
+        {name:'red hat',image:'red_hat-removebg-preview.png',kind:'hat',cost:50},
+        {name:'bunny ears',image:'bunny_ears-removebg-preview.png',kind:'ears',cost:35},
+        {name:'green shorts',image:'green_shorts-removebg-preview.png',kind:'shorts',cost:60}
       ]
     };
     let balance = 240;
-    let equipped = 'leaf crown';
+    let equipped = null;
     const grid = document.querySelector('#item-grid');
     const balanceEl = document.querySelector('#balance');
     const status = document.querySelector('#status');
@@ -102,18 +99,10 @@
       grid.innerHTML = catalog[category].map(item => {
         const selected = item.name === equipped;
         const unavailable = !item.owned && balance < item.cost;
-        return `<article class="item"><button class="item-card${selected ? ' selected' : ''}" type="button" data-name="${item.name}" data-cost="${item.cost}" data-owned="${Boolean(item.owned)}" aria-pressed="${selected}" ${unavailable ? 'disabled' : ''} aria-label="${item.name}, ${selected ? 'equipped' : item.owned ? 'owned' : `${item.cost} acorns`}">${selected ? '<span class="on-badge">on</span>' : ''}<span class="item-art">accessory<br>art</span></button><p class="item-name">${item.name}</p><span class="price">${item.owned ? 'owned' : `<span class="acorn-icon" aria-hidden="true"></span>${item.cost}`}</span></article>`;
+        return `<article class="item"><button class="item-card${selected ? ' selected' : ''}" type="button" data-name="${item.name}" data-image="${item.image}" data-kind="${item.kind}" data-cost="${item.cost}" data-owned="${Boolean(item.owned)}" aria-pressed="${selected}" ${unavailable ? 'disabled' : ''} aria-label="${item.name}, ${selected ? 'equipped' : item.owned ? 'owned' : `${item.cost} acorns`}">${selected ? '<span class="on-badge">on</span>' : ''}<img class="item-art" src="imgs/${item.image}" alt=""></button><p class="item-name">${item.name}</p><span class="price">${item.owned ? 'owned' : `<span class="acorn-icon" aria-hidden="true"></span>${item.cost}`}</span></article>`;
       }).join('');
     }
     document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => render(tab.dataset.category)));
-    document.querySelector('.tabs').addEventListener('keydown', event => {
-      const tabs = [...document.querySelectorAll('.tab')];
-      const current = tabs.indexOf(document.activeElement);
-      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-        event.preventDefault(); const next = (current + (event.key === 'ArrowRight' ? 1 : 2)) % 3;
-        tabs[next].focus(); tabs[next].click();
-      }
-    });
     grid.addEventListener('click', event => {
       const button = event.target.closest('.item-card'); if (!button) return;
       const name = button.dataset.name; const cost = Number(button.dataset.cost);
@@ -121,7 +110,10 @@
       const item = Object.values(catalog).flat().find(entry => entry.name === name);
       item.owned = true; equipped = name;
       document.querySelector('#equipped-label').textContent = `${name} on`;
-      const stage = document.querySelector('.stage'); stage.querySelector('.squirrel-wrap').setAttribute('aria-label', `Squirrel placeholder with ${name} equipped`);
+      const preview = document.querySelector('#equipped-preview');
+      preview.src = `imgs/${item.image}`;
+      preview.className = `equipped-preview show ${item.kind}`;
+      const stage = document.querySelector('.stage'); stage.querySelector('.squirrel-wrap').setAttribute('aria-label', `Squirrel wearing ${name}`);
       render(document.querySelector('.tab[aria-selected="true"]').dataset.category);
       status.textContent = `${name} equipped${button.dataset.owned === 'true' ? '' : ` for ${cost} acorns`}. ${balance} acorns remaining.`;
     });
