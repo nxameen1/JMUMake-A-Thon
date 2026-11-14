@@ -1,0 +1,136 @@
+:root {
+    --paper: #f7efdc;
+    --paper-deep: #f2e8d0;
+    --ink: #323031;
+    --muted: #8a804c;
+    --purple: #8c4c1f;
+    --purple-soft: #ebdfc4;
+    --line: #e0d3b2;
+    --white: #fffdf8;
+    --terracotta: #c68346;
+}
+
+.icon-button {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    color: var(--purple);
+    background: var(--purple-soft);
+    text-decoration: none;
+}
+
+.icon-button svg {
+    width: 22px;
+    height: 22px;
+}
+
+.topbar .greeting {
+    margin: 0;
+    text-align: center;
+}
+
+.topbar .icon-button:last-child {
+    justify-self: end;
+}
+
+.projectInfo {
+    display: grid;
+    gap: 20px;
+    padding: 0 20px 105px;
+}
+
+.projectImage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 23px;
+    background: var(--line);
+}
+
+.projectDescription {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.teamList {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.teamMember {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px 17px;
+    border: 1px solid var(--line);
+    border-radius: 21px;
+    background: var(--paper);
+    box-shadow: 0 5px 0 rgb(138 128 76 / 7%);
+}
+
+.teamMember.is-you {
+    border: 2px solid var(--terracotta);
+}
+
+.memberAvatar {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--line);
+}
+
+.memberInfo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.memberName {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.memberMajor {
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .055em;
+    text-transform: uppercase;
+}
+
+.joinButton {
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    bottom: 0;
+    width: min(100%, 430px);
+    padding: 14px 20px max(16px, env(safe-area-inset-bottom));
+    border-top: 1px solid rgb(224 211 178 / 85%);
+    background: rgb(255 253 248 / 94%);
+    backdrop-filter: blur(10px);
+    transform: translateX(-50%);
+}
+
+.joinButton button {
+    width: 100%;
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 999px;
+    color: var(--white);
+    background: var(--terracotta);
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 4px 9px rgb(50 48 49 / 18%);
+}
