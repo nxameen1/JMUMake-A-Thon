@@ -14,9 +14,33 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="./styles.css" />
-</head>
+    <link rel="stylesheet" href="./drawer.css" />
+    <script src="./drawer.js">
+    </script>
 
 <body>
+    <div class="drawer hiddenDrawer" id="joinDrawer" role="dialog" aria-labelledby="drawer-title">
+        <div class="drawer-header">
+            <div>
+                <p class="greeting">Ready to help?</p>
+                <h2 id="drawer-title">Join this project</h2>
+            </div>
+            <button class="drawer-close" type="button" aria-label="Close" onclick="toggleDrawer('joinDrawer')">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
+                    <path
+                        d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <p class="drawer-body">Joining means you commit to gathering 2 full trash bags outside of Rose Library within 24
+            hours, then taking a picture with your group.</p>
+        <div class="drawer-actions">
+            <a class="confirm-join" href="../join-success/index.html">Confirm and Join</a>
+            <button class="cancel-join" type="button" onclick="toggleDrawer('joinDrawer')">Not right now</button>
+        </div>
+
+    </div>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <div class="app-shell">
@@ -93,10 +117,10 @@
         </main>
 
         <div class="joinButton">
-            <button class="button-color">Join Project</button>
+            <button class="button-color" onclick="toggleDrawer('joinDrawer')">Join Project</button>
         </div>
     </div>
-<script>
+    <script>
         document.querySelector('[data-history-back]').addEventListener('click', (event) => {
             if (document.referrer && new URL(document.referrer).origin === window.location.origin && history.length > 1) {
                 event.preventDefault();
